@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->foreignId('role_id')->nullable()->constrained('roles')->onDelete('set null');
-        });
+       Schema::create('actors', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->date('dob')->nullable();
+    $table->timestamps();
+});
     }
 
     /**
@@ -26,8 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('actors');
     }
 };

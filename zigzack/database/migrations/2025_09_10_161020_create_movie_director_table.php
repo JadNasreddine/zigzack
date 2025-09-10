@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->foreignId('role_id')->nullable()->constrained('roles')->onDelete('set null');
-        });
+        Schema::create('movie_director', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('movie_id')->constrained()->onDelete('cascade');
+    $table->foreignId('director_id')->constrained()->onDelete('cascade');
+    $table->timestamps();
+});
     }
 
     /**
@@ -26,8 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('movie_director');
     }
 };

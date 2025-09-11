@@ -253,14 +253,14 @@ class TestCommand extends Command
 // $kubrick = Director::where('name', 'Stanley Kubrick')->first();
 // $shining->director()->associate($kubrick);
 // $shining->save();
-$movies = Movie::all();
-$directors = Director::all();
+// $movies = Movie::all();
+// $directors = Director::all();
 
-$movies[0]->directors()->sync([$directors[0]->id, $directors[1]->id]);
-$movies[1]->directors()->sync([$directors[2]->id]);
-$movies[2]->directors()->sync([$directors[3]->id]);
-$movies[3]->directors()->sync([$directors[4]->id]);
-$movies[4]->directors()->sync([$directors[0]->id, $directors[2]->id]);
+// $movies[0]->directors()->sync([$directors[0]->id, $directors[1]->id]);
+// $movies[1]->directors()->sync([$directors[2]->id]);
+// $movies[2]->directors()->sync([$directors[3]->id]);
+// $movies[3]->directors()->sync([$directors[4]->id]);
+// $movies[4]->directors()->sync([$directors[0]->id, $directors[2]->id]);
 
 
 

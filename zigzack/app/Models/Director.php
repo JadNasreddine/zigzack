@@ -10,8 +10,7 @@ class Director extends Model
     protected $fillable = ['name', 'dob'];
 
     // A director can direct many movies
-    public function movies()
-    {
-        return $this->belongsToMany(Movie::class);
-    }
+  public function movies() {
+    return $this->belongsToMany(Movie::class, 'movie_director'); // specify actual pivot table
+}
 }

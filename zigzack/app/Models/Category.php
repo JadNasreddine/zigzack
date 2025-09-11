@@ -10,8 +10,7 @@ class Category extends Model
     protected $fillable = ['name'];
 
     // A category can belong to many movies
-    public function movies()
-    {
-        return $this->belongsToMany(Movie::class);
-    }
+    public function movies() {
+    return $this->belongsToMany(Movie::class, 'movie_category'); // pivot table
+}
 }

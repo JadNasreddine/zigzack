@@ -10,20 +10,17 @@ class Movie extends Model
     protected $fillable = ['title', 'description', 'release_date', 'poster'];
 
     // Movie can belong to many categories
-    public function categories()
-    {
-        return $this->belongsToMany(Category::class);
-    }
+    public function categories() {
+    return $this->belongsToMany(Category::class, 'movie_category'); // pivot table
+}
 
     // Movie can have many actors
-    public function actors()
-    {
-        return $this->belongsToMany(Actor::class);
-    }
+    public function actors() {
+    return $this->belongsToMany(Actor::class, 'movie_actor'); // specify actual pivot table
+}
 
     // Movie can have many directors
-    public function directors()
-    {
-        return $this->belongsToMany(Director::class);
-    }
+  public function directors() {
+    return $this->belongsToMany(Director::class, 'movie_director'); // specify actual pivot table
+}
 }

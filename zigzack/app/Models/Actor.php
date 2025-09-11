@@ -10,8 +10,7 @@ class Actor extends Model
     protected $fillable = ['name', 'dob'];
 
     // An actor can play in many movies
-    public function movies()
-    {
-        return $this->belongsToMany(Movie::class);
-    }
+    public function movies() {
+    return $this->belongsToMany(Movie::class, 'movie_actor'); // specify actual pivot table
+}
 }
